@@ -219,13 +219,14 @@ main h1 {
   font-size: 10px;
   color: #fff;
 }
+ 
 .todo_list .todo_list_btn li:first-of-type {
   border-radius: 6px 6px 0 0;
 }
 .todo_list .todo_list_btn li:last-of-type {
   border-radius: 0 0 6px 6px;
 }
-
+ 
 footer {
   position: relative;
   display: flex;
