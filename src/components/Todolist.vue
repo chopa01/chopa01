@@ -14,36 +14,9 @@
             <!-- ul.todo_list -->
             <ul class="todo_list">
                 <li class="todo_list_tit"><p>할 일</p></li> 
-                <li class="del_btn" >
-					<li class="del_btn" v-for="(item, index) in todolist" :key="index" >
+				<li class="del_btn" v-for="(item, index) in todolist" :key="index" >
                     <p> <input type="checkbox" name="check1" value="">{{item.todo}}  </p>
-						</li>
-                   <!-- <ul class="todo_list_btn">
-                        <li><button>수 정</button></li>
-                        <li><button>삭 제</button></li>
--->
-                    </ul>
-                </li>
-
-<!--
-
-                <li>
-                    <p><input type="checkbox" name="check2" value="">웹 알아보기</p>
-                    <p><span></span></p>
-                </li>
-                <li>
-                    <p><input type="checkbox" name="check3" value="">책 읽기</p>
-                    <p><span></span></p>
-                </li>
-                <li>
-                    <p><input type="checkbox" name="check4" value="">거북이한테 전화하기</p>
-                    <p><span></span></p>
-                </li>
-                <li>
-                    <p><input type="checkbox" name="check5" value="">유리랑 소꿉놀이하기</p>
-                    <p><span></span></p>
-                </li>
--->
+				</li> 
             </ul>
             <!--// ul.todo_list -->
 
@@ -59,10 +32,11 @@ export default {
   data: function() {
   return { 
 	 todolist:  [
-		 {todo:"Vue공부하기"},
-		 {todo:"영화보기"},
 		 {todo:"공부하기"},
-		 {todo:"숙제하기"},
+		 {todo:"친구와 점심약속 12시"},
+		 {todo:"넷플릭스 영화보기"},
+		 {todo:"Vue숙제하기"},
+		 {todo:"남한산성 벚꽃놀이"},
 	 ]
   }
   },  
