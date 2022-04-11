@@ -14,8 +14,9 @@
 				</li>
 				<li class="del_btn" v-for="(item, index) in todolist" :key="index">
                     <p :class="{doneStyle:item.done}"> <input type="checkbox" name="check1" v-model="item.done">{{item.todo}}  </p>
-					 <ul class="todo_list_btn">
+					 <ul class="todo_list_btn">  
                        <!-- <li><button>수 정</button></li>-->
+						 <lit>{{item.regDate}}</lit>
                         <li><button  @click="subTodo(index)">삭 제</button></li>
                     </ul>
 				</li> 
@@ -38,30 +39,35 @@ export default {
   data: function() {
   return { 
 	 todolist:  [
-		 {done:false, todo:"공부하기"}, //날짜 추가 가능
-		 {done:false, todo:"친구와 점심약속 12시"},
-		 {done:false, todo:"넷플릭스 영화보기"},
-		 {done:false, todo:"Vue숙제하기"},
-		 {done:false, todo:"남한산성 벚꽃놀이"},
+		 {done:false, todo:"공부하기",regDate:"4/09"}, //날짜 추가 가능
+		 {done:false, todo:"친구와 점심약속 12시",regDate:"4/09"},
+		 {done:false, todo:"넷플릭스 영화보기",regDate:"4/09"},
+		 {done:false, todo:"Vue숙제하기",regDate:"4/09"},
+		 {done:false, todo:"남한산성 벚꽃놀이",regDate:"4/10"},
 	 ]
   }
   },  
 	computed:{
 		remaining() {
 			return this.todolist.filter(function(val){
-				console.log(val);
+		 
 				return val.done;
 			}).length; 
 		 
-		}
+		} 
 	},
 	methods: {
 		addTodo(val) {
-	 		this.todolist.push({done:false, todo:val});
+			var cd = new Date(); // 현재날짜
+			var todo_regdate = cd.getMonth()+1 + '/'+ cd.getDate();
+		 
+	 		this.todolist.push({done:false, todo:val, regDate:todo_regdate});
 		 
 		},
 		subTodo(idx){
+			if(confirm("정말 삭제하시겠습니까?")) {
 			this.todolist.splice(idx, 1);
+			}
 		},
 		cleanTodo() {
 			this.todolist = this.todolist.filter(function(val){
@@ -69,7 +75,8 @@ export default {
 			})
 		}
 		
-	}
+	},
+ 
 }
 </script>
  <style>
