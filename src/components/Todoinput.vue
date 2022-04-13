@@ -21,8 +21,7 @@ export default {
  	 }
   }, 
 methods: {
-	addTodo() {
-		 
+	addTodo() { 
 		if(this.addText =="") {
 			
 			alert('할일을 적어주세요');

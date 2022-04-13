@@ -4,19 +4,17 @@
         <div class="container">
             <h1>To - Do List</h1> 
 			<Todoinput @addTodo="addTodo"/>
-       
- 
             <ul class="todo_list">
                 <li class="todo_list_tit"><p>할 일</p></li> 
-				<li><p>{{remaining}} / {{todolist.length}} 건 처리 </p>
+				<li><p>	 
+				{{remaining}} / {{todolist.length}} 건 처리 </p>
 				<button @click="cleanTodo()">
 					처리완료삭제</button>		
 				</li>
 				<li class="del_btn" v-for="(item, index) in todolist" :key="index">
                     <p :class="{doneStyle:item.done}"> <input type="checkbox" name="check1" v-model="item.done">{{item.todo}}  </p>
 					 <ul class="todo_list_btn">  
-                       <!-- <li><button>수 정</button></li>-->
-						 <lit>{{item.regDate}}</lit>
+						 <li>{{item.regDate}}</li>
                         <li><button  @click="subTodo(index)">삭 제</button></li>
                     </ul>
 				</li> 
@@ -38,16 +36,18 @@ export default {
 },
   data: function() {
   return { 
+
+	  
 	 todolist:  [
-		 {done:false, todo:"공부하기",regDate:"4/09"}, //날짜 추가 가능
-		 {done:false, todo:"친구와 점심약속 12시",regDate:"4/09"},
-		 {done:false, todo:"넷플릭스 영화보기",regDate:"4/09"},
-		 {done:false, todo:"Vue숙제하기",regDate:"4/09"},
-		 {done:false, todo:"남한산성 벚꽃놀이",regDate:"4/10"},
+		 {done:false, todo:"공부하기", regDate:"4/09"}, //날짜 추가 가능
+		 {done:false, todo:"친구와 점심약속 12시", regDate:"4/09"},
+		 {done:false, todo:"넷플릭스 영화보기", regDate:"4/09"},
+		 {done:false, todo:"Vue숙제하기", regDate:"4/09"},
+		 {done:false, todo:"남한산성 벚꽃놀이", regDate:"4/09"},
 	 ]
   }
   },  
-	computed:{
+computed:{
 		remaining() {
 			return this.todolist.filter(function(val){
 		 
@@ -55,9 +55,10 @@ export default {
 			}).length; 
 		 
 		} 
-	},
+},
 	methods: {
 		addTodo(val) {
+		 
 			var cd = new Date(); // 현재날짜
 			var todo_regdate = cd.getMonth()+1 + '/'+ cd.getDate();
 		 
@@ -77,7 +78,8 @@ export default {
 		
 	},
  
-}
+	}
+ 
 </script>
  <style>
 	 .doneStyle {
