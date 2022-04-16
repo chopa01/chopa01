@@ -74,7 +74,8 @@ main {
 }
 main .container {
   padding: 30px;
-  max-width: 900px;
+ max-width: 900px;
+
 }
 main .container > ul {
   margin-top: 20px;
@@ -89,6 +90,7 @@ main .container > ul li:first-of-type {
   border-radius: 5px 5px 0 0;
   background-color: #8eccff;
   box-sizing: border-box;
+	  
 }
 main .container > ul li:first-of-type p {
   padding: 10px 10px;
@@ -116,6 +118,7 @@ main h1 {
   width: 100%;
   box-sizing: border-box;
   text-align: start;
+	
 }
 .list_add li input[type=text] {
   outline: 0;

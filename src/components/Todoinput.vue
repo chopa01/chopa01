@@ -1,5 +1,4 @@
 <template>
-  
 	  <main class="todo">
 		<div class="container">
 			<ul class="list_add">
@@ -8,7 +7,6 @@
 			</ul>
 		</div>
 	</main>
- 
 </template>
 
 <script> 
